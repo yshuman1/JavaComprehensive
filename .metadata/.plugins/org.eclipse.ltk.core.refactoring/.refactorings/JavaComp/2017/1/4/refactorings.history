@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 4 elements to &apos;JavaComp/src&apos;&#x0A;- Original project: &apos;JavaComp&apos;&#x0A;- Destination element: &apos;JavaComp/src&apos;&#x0A;- Original elements:&#x0A;     StillNOOPBox.java&#x0A;     NOOPBox.java&#x0A;     MainOOPDriver.java&#x0A;     OOPBox.java&#x0A;- Update references to refactored element" description="Move files" destination="/src" element1="StillNOOPBox.java" element2="NOOPBox.java" element3="MainOOPDriver.java" element4="OOPBox.java" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1485204838669" units="0" version="1.0"/>
+</session>

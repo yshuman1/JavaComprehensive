@@ -1,0 +1,15 @@
+import java.text.NumberFormat;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int input = 755;
+		NumberFormat n = NumberFormat.getNumberInstance();
+		n.setMinimumFractionDigits(3);
+		String r = n.format(input);
+		System.out.println(r);
+
+	}
+
+}
