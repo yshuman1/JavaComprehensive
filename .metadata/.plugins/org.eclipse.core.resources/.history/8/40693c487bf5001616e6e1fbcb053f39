@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class AccountApplication {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String choice = "y";
+		Savings s = new Savings();
+		Checking c = new Checking();
+		
+		System.out.println("Welcome to the Account application\n\n" +
+				"Starting Balances\nChecking: " + s.cash.format(s.balance) + 
+				"\nSavings: " + c.cash.format(c.balance));
+		System.out.println("\nEnter the transactions for this month\n");
+		
+		while (choice.equalsIgnoreCase("y")) {
+			Validator.getChoiceString(sc, "Withdrawal or deposit? (w/d): " , "w", "d");
+			//need to take the return so we know which method we will be calling
+			Validator.getChoiceString(sc, "Checking or savings? (c/s): " , "c", "s");
+			//need to take the return to know which object we are working with
+			System.out.print("\nContinue? (y/n): ");
+			choice = sc.next();
+			sc.nextLine();
+			}
+		}
+	}

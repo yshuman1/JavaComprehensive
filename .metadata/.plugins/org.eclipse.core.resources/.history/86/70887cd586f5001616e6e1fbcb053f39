@@ -1,0 +1,33 @@
+
+public class Account implements Bankable{
+	double balance = 1000.00;
+	double amount;
+	double interest = 1.0f;
+	double fees = 12.00;
+	@Override
+	public double withdrawal() {
+		return balance -= amount;
+		
+	}
+
+	@Override
+	public double deposit() {
+		return balance += amount;
+				
+	}
+
+	@Override
+	public double calcInterest() {
+		return balance * interest/100.0f;
+		
+		
+	}
+
+	@Override
+	public double calcFees() {
+		return fees; 
+		
+	}
+
+	
+}
