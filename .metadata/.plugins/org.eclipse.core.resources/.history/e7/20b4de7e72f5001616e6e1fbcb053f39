@@ -1,0 +1,9 @@
+
+public class AccountApplication {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Account application\n\n");
+		Savings account1  = new Savings();
+	}
+
+}

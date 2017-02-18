@@ -1,0 +1,7 @@
+
+public class Savings extends Account {
+	Savings(){
+		System.out.println("hello savings");
+	}
+
+}

@@ -1,0 +1,9 @@
+
+public class Savings extends Account {
+	
+	Savings() {
+		super();
+	}
+}
+
+

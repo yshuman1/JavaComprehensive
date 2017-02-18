@@ -1,0 +1,10 @@
+
+public class Savings extends Account {
+	super();
+	
+		System.out.println("hello savings");
+	
+
+}
+}
+

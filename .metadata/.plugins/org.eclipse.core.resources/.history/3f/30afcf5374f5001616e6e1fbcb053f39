@@ -1,0 +1,13 @@
+
+public class Savings extends Account {
+	
+	Savings() {
+		//super();
+		System.out.println(balance);
+		System.out.println("supers balance is " + balance);
+		this.balance = 1.00;
+		System.out.println(this.balance + " the first one is " + balance);
+	}
+}
+
+
