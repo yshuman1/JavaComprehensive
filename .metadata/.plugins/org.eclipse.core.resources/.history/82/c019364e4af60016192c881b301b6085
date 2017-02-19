@@ -18,12 +18,8 @@ public class AccountApplication {
 		while (choice.equalsIgnoreCase("y")) {
 			String trans = Validator.getChoiceString(sc, "\nWithdrawal or deposit? (w/d): " , "w", "d");
 			String accountType = Validator.getChoiceString(sc, "Checking or savings? (c/s): " , "c", "s");
-			//System.out.println("Amount?: ");
-			//amount = sc.nextDouble();
-			
-			/*need to make an if else maybe? because the maximum for a withdrawal is different than the max for a deposit*/
-			amount = Validator.validateAmount(sc, "Amount?: ", 0.01, 1.00);
-			
+			System.out.println("Amount?: ");
+			amount = sc.nextDouble();
 			if (accountType.equalsIgnoreCase("c")) {
 				c.transact(trans, amount);	
 			} else {

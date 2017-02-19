@@ -43,7 +43,7 @@ public class Validator {
 	             }
 	             return s;
 	             }
-	      public static double validateAmount(Scanner sc, String prompt) {
+	      public static double getDouble(Scanner sc, String prompt) {
 	    	  double d = 0;
 	    	  boolean isValid = false;
 	    	  while (isValid == false) {
@@ -58,11 +58,16 @@ public class Validator {
 	    	  }
 	    	  return d;
 	      }
-	      public static double validateAmount(Scanner sc, String prompt, double min, double max) {
+	      
+	      
+	      
+	      
+	      
+	      public static double getAmount(Scanner sc, String prompt, double min, double max) {
 	    	  double d = 0;
 	    	  boolean isValid = false;
 	    	  while (isValid == false) {
-	    		  d = validateAmount(sc, prompt);
+	    		  d = getDouble(sc, prompt);
 	    		  if (d <= min) {
 	    			  System.out.println("Error! Numer must be greater than " + min + ".");
 	    		  } else if (d >= max) {
