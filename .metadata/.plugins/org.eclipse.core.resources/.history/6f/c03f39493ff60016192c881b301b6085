@@ -17,22 +17,19 @@ public class AccountApplication {
 		
 		while (choice.equalsIgnoreCase("y")) {
 			String trans = Validator.getChoiceString(sc, "\nWithdrawal or deposit? (w/d): " , "w", "d");
+			//need to take the return so we know which method we will be calling						
 			String accountType = Validator.getChoiceString(sc, "Checking or savings? (c/s): " , "c", "s");
-			System.out.println("Amount?: ");
-			amount = sc.nextDouble();
-			if (accountType.equalsIgnoreCase("c")) {
-				c.transact(trans, amount);	
-			} else {
-				s.transact(trans, amount);
-			}
-			
+			//need to take the return to know which object we are working with
+		System.out.println("Amount?: ");
+		amount = sc.nextDouble();
+		/*transact(accountType, trans, amount);	
 			System.out.print("\nContinue? (y/n): ");
 			choice = sc.next();
 			sc.nextLine();
-		}
+			}*/
 		displayOnExit(s,c); 
+		}
 	}
-	
 	public static void displayOnExit(Savings s, Checking c) {
 		System.out.println("\nMonthly Payments and Fees\n" +
 				"Checking fees:\t\t   " + cash.format(c.FEES) + 
