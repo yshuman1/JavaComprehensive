@@ -18,23 +18,25 @@ public class AccountApplication {
 		while (choice.equalsIgnoreCase("y")) {
 			String trans = Validator.getChoiceString(sc, "\nWithdrawal or deposit? (w/d): " , "w", "d");
 			String accountType = Validator.getChoiceString(sc, "Checking or savings? (c/s): " , "c", "s");
+			//System.out.println("Amount?: ");
+			//amount = sc.nextDouble();
 			
+			/*need to make an if else maybe? because the maximum for a withdrawal is different than the max for a deposit*/
 			amount = Validator.validateAmount(sc, "Amount?: ", 0.01);
-			try {
-				if (accountType.equalsIgnoreCase("c")) {
-					c.transact(trans, amount);	
-				} else {
-					s.transact(trans, amount);
-				}
-			} catch (Exception e) {
-				System.out.println(e);
+			
+			if (accountType.equalsIgnoreCase("c")) {
+				c.transact(trans, amount);	
+			} else {
+				s.transact(trans, amount);
 			}
+			
 			System.out.print("\nContinue? (y/n): ");
 			choice = sc.next();
 			sc.nextLine();
 		}
 		displayOnExit(s,c); 
 	}
+	
 	public static void displayOnExit(Savings s, Checking c) {
 		System.out.println("\nMonthly Payments and Fees\n" +
 				"Checking fees:\t\t   " + cash.format(c.FEES) + 

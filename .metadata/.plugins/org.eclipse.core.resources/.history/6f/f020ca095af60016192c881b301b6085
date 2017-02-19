@@ -35,6 +35,7 @@ public class AccountApplication {
 		}
 		displayOnExit(s,c); 
 	}
+	
 	public static void displayOnExit(Savings s, Checking c) {
 		System.out.println("\nMonthly Payments and Fees\n" +
 				"Checking fees:\t\t   " + cash.format(c.FEES) + 

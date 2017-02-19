@@ -19,8 +19,10 @@ public class Validator {
 	             }
 	                   return s;
 	      }
+	     
 	      // add another new method that forces the user to enter one of two string
-	      public static String getChoiceString(Scanner sc, String prompt, String s1, String s2) {
+	      public static String getChoiceString(Scanner sc, String prompt, String s1, String s2)
+	      {
 	             String s = "";
 	             boolean isValid = false;
 	             while (isValid == false)
@@ -39,7 +41,7 @@ public class Validator {
 	                   }
 	             }
 	             return s;
-	      }
+	             }
 	      public static double validateAmount(Scanner sc, String prompt) {
 	    	  while (true) {
 	    		  System.out.print(prompt);

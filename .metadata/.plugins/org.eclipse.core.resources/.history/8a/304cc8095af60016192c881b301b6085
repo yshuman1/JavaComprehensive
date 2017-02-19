@@ -5,6 +5,7 @@ public class Savings extends Account {
 	public double calcInterest() {
 		return balance * INTEREST;
 	}	
+	
 }
 
 

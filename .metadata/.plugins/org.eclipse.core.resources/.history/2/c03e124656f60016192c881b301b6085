@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 public class Validator {
-	      public static String getRequiredString(Scanner sc, String prompt) {
+	      public static String getRequiredString(Scanner sc, String prompt)
+	      {
 	             String s = "";
 	             boolean isValid = false;
 	             while (isValid == false)
@@ -18,9 +19,11 @@ public class Validator {
 	                   }
 	             }
 	                   return s;
-	      }
+	             }
+	     
 	      // add another new method that forces the user to enter one of two string
-	      public static String getChoiceString(Scanner sc, String prompt, String s1, String s2) {
+	      public static String getChoiceString(Scanner sc, String prompt, String s1, String s2)
+	      {
 	             String s = "";
 	             boolean isValid = false;
 	             while (isValid == false)
@@ -39,24 +42,36 @@ public class Validator {
 	                   }
 	             }
 	             return s;
-	      }
+	             }
 	      public static double validateAmount(Scanner sc, String prompt) {
-	    	  while (true) {
+	    	  double d = 0;
+	    	  boolean isValid = false;
+	    	  while (isValid == false) {
 	    		  System.out.print(prompt);
 	    		  if (sc.hasNextDouble()) {
-	    			  return sc.nextDouble();
-	      		  }   
-	    		  System.out.println("Error! Invalid value. Try again.");
+	    			  d = sc.nextDouble();
+	    			  isValid = true;
+	    		  } else {
+	    			  System.out.println("Error! Invalid decimal value. Try again.");
+	    		  }
 	    		  sc.nextLine();
 	    	  }
+	    	  return d;
 	      }
-	      public static double validateAmount(Scanner sc, String prompt, double min) {
-	    	  while (true) {
-	    		  double d = validateAmount(sc, prompt);
-	    		  if (d >= min) {
-	    			  return d;
-	    		  } 
-	    		  System.out.println("Error! Amount must be greater than " + min + ".");
+	      public static double validateAmount(Scanner sc, String prompt, double min, double max) {
+	    	  double d = 0;
+	    	  boolean isValid = false;
+	    	  while (isValid == false) {
+	    		  d = validateAmount(sc, prompt);
+	    		  if (d <= min) {
+	    			  System.out.println("Error! Numer must be greater than " + min + ".");
+	    		  } else if (d >= max) {
+	    			  System.out.println("Error! Number must be less than " + max + ".");
+	    		  } else {
+	    			  isValid = true;
+	    		  }
+	    			 
 	    	  }
+	    	  return d;
 	      }
 }
