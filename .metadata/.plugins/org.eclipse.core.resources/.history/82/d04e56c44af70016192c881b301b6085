@@ -16,6 +16,8 @@ public interface Bankable {
 	 * @throws Exception amount is less than 0.01
 	 */
 	public abstract double deposit(double i) throws Exception;
-	
+	/**
+	 * @return
+	 */
 	public abstract double calcInterest();
 }
