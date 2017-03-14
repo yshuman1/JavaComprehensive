@@ -1,0 +1,58 @@
+import java.io.*;
+import java.nio.file.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Learn {
+
+	public static void main(String[] args) throws IOException {
+		
+		//create a text file named yasinsTextFile.txt and save some data to it
+		Path textPath = Paths.get("/Users/yasin/Documents/yasinsTextFile.txt");
+		File textFile = textPath.toFile();
+		String timeStamp = new SimpleDateFormat("MM.dd.HH.mm").format(new Date());
+		System.out.println("Creating Text File \"yasinsTextFile\".");
+		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(textFile)))) {
+			out.println("Successfully created and wrote to the text file named " + textPath + "\nThis file was created at: " + timeStamp);
+			System.out.println("Successfully created and wrote to the text file named " + textPath + "\nThis file was created at: " + timeStamp);
+			out.close();
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+		//append to an existing text file
+		try (PrintWriter outAppend = new PrintWriter(new BufferedWriter(new FileWriter(textFile, true)))) {
+			outAppend.println("This line was appended to the file on " + timeStamp );
+			System.out.println("Successfully Appended to the text file name " + textPath + "\nThis appended text is \"This line was added on " + timeStamp + "\"");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//read from a text file
+		try (BufferedReader inText = new BufferedReader(new FileReader(textFile))) {
+			String line;
+			while ((line = inText.readLine()) != null) {
+				System.out.println("Read from the file:\n" + line);
+			}
+		inText.close();
+		} catch (IOException e) {
+			
+		} 
+		
+		//create a csv file named yasinsCsvFile.csv and save some data to it
+		//added throws to main method so i wouldnt have to use try catch block on this one
+		
+		Path csvPath = Paths.get("/Users/yasin/Documents/yasinsCsvFile.txt");
+		File csvFile = csvPath.toFile();
+		PrintWriter out3 = new PrintWriter(new BufferedWriter(new FileWriter(csvFile)));
+			int i = 0;
+			while (i < 30 ){
+				out3.print(SomeObject.getCount() + ",");
+				out3.print(SomeObject.updateCount(SomeObject.getCount()) + ",");
+				System.out.print(SomeObject.getCount() + ",");
+				System.out.println(SomeObject.updateCount(SomeObject.getCount()) + ",");
+				i++;
+			}
+		out3.close();
+	}
+}

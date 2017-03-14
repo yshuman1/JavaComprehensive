@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;SomeObject.count&apos; in &apos;SomeObject&apos;&#x0A;- Original project: &apos;CreateReadWrite&apos;&#x0A;- Original element: &apos;SomeObject.count&apos;&#x0A;- Getter method name: &apos;getCount&apos;&#x0A;- Setter method name: &apos;setCount&apos;&#x0A;- Field visibility: &apos;public&apos;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;count&apos;" flags="589830" getter="getCount" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;{SomeObject.java[SomeObject^count" insertion="1" setter="setCount" stamp="1489176235060" version="1.0" visibility="1"/>
+</session>
