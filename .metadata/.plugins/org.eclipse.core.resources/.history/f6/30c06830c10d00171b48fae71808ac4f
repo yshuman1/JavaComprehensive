@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Validator {
+	public static int validateChoice(int choice){
+		if (choice <= 5){
+				return choice;
+		} else {		
+			System.out.print("false");
+			return choice;
+		}
+	}
+	
+	public static int validateChoice(Scanner sc, String menu) {
+  	  while (true) {
+  		  System.out.print(menu);
+  		  if (sc.hasNextInt()) {
+  			  return sc.nextInt();
+    		  }   
+  		  System.out.println("Error! Invalid value. Try again.");
+  		  sc.nextLine();
+  	  }
+    }
+	 public static int validateChoice(Scanner sc, String menu, int max) {
+		 while (true) {
+   		  int choice = validateChoice(sc, menu);
+   		  if (choice <= max) {
+   			  return choice;
+    	  }
+      }
+   		  } 
+	
+}
+

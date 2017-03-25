@@ -1,0 +1,26 @@
+
+public class ThreadRunner extends Thread{
+	String name = "";
+	int restPercentage;
+	int runnersSpeed;
+	int distance;
+	ThreadRunner() {
+		
+	}
+	ThreadRunner(String name, int restPercent, int speed){
+		this.name = name;
+		this.restPercentage = restPercent;
+		this.restPercentage = speed;
+	}
+	public void run() {
+		System.out.println(this.getName() + " started.");
+		try {
+			for (distance = 0; distance <= 1000; distance += runnersSpeed){
+				System.out.println(distance);
+				//Thread.sleep(2000);
+			}
+		}
+		catch (InterruptedException e) {}
+		System.out.print(this.getName() + " finished.");
+	}
+}

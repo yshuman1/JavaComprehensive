@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Validator {
+	boolean error = false;
+	public static boolean validChoice(int choice){
+		if (!sc.nextInt()) {
+			error = true;
+			System.out.print("Invalid input!");
+			System.out.print(menu);
+		}
+	/*	if (choice <= 5){
+			return true;
+		} else {		
+			System.out.print(false);
+			return false;
+		}*/
+	}
+}
+

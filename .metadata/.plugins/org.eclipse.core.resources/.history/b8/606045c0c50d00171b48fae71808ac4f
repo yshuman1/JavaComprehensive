@@ -1,0 +1,11 @@
+public class Validator {
+	public static int validateChoice(int choice){
+		if (choice <= 5){
+				return choice;
+		} else {		
+			System.out.print("false");
+			return choice;
+		}
+	}
+}
+

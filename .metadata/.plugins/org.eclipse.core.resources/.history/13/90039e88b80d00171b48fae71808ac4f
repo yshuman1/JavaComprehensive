@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Validator {
+	public static void menu() {
+		System.out.println("Welcome to the Marathon Race Runner Program\n\n1.   "
+				+ "Derby database\n2.   "
+				+ "XML file\n3.   "
+				+ "Text file\n4.   "
+				+ "Default two runners\n5.   "
+				+ "Exit");
+	}
+}

@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Validator {
+	public static boolean validateChoice(int choice){
+		if (choice <= 5){
+			return true;
+		} else {		
+			System.out.print(false);
+			return false;
+		}
+	}
+}
+

@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class MarathonRaceApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		menu();
+		int choice = sc.nextInt();
+		Validator.isValid(choice);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void menu() {
+		System.out.print("Welcome to the Marathon Race Runner Program\n\n1.  "
+			+ "Derby database\n2.  "
+			+ "XML file\n3.  "
+			+ "Text file\n4.  "
+			+ "Default two runners\n5.  "
+			+ "Exit\n\n"
+			+ "Enter your choice: ");	
+	}
+
+}
