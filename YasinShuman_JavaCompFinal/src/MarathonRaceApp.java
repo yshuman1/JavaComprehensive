@@ -19,8 +19,8 @@ public class MarathonRaceApp {
 		Thread t2 = new ThreadRunner("Tortouise", 0, 10);
 		Thread t3 = new ThreadRunner("Hare", 90, 100);
 		t2.start();
-		t3.start();
-		t2.run();
+		//t3.start();
+		
 		
 	}
 }
