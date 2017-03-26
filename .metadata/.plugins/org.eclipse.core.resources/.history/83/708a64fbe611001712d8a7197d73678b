@@ -15,7 +15,6 @@ public class MarathonRaceApp {
 		//String textPrompt = "Enter text file name: ";
 		int choice = Validator.validChoice(sc, menu);
 		//create second prompt about file name or proceed to getting info
-		System.out.println("confirming validator returning value : " + choice);
 		Thread t2 = new ThreadRunner("Tortouise", 0, 10);
 		Thread t3 = new ThreadRunner("Hare", 90, 100);
 		t2.start();

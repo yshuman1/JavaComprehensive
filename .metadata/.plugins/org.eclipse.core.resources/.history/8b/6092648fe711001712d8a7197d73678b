@@ -11,11 +11,11 @@ public class ThreadRunner extends Thread{
 		this.setName(name);
 		this.restPercentage = restPercentage;
 		this.restPercentage = runnersSpeed;
-		System.out.println("thread object created " + this.getName()); 
+		System.out.println("thread object created " + this.getName()); //why doesnt it assign
 	}
 
 	public void run() {
-		System.out.println("run method called from thread " + this.getName());
+		System.out.println("run method called");
 		/*if((int) (Math.random() *100) > restPercentage) {
 			for (distance = 0; distance <= 1000; distance += runnersSpeed){
 				System.out.println(distance);
