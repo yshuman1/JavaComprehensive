@@ -45,7 +45,7 @@ public class Marathon implements CallBackFromThread {
 		}
 		System.out.println("Good Bye!");
 		return;
-
+		//test if github integration works
 	}
 
 
