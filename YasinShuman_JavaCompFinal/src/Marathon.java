@@ -31,6 +31,7 @@ public class Marathon implements CallBackFromThread {
 			case 2:
 				break;
 			case 3:
+				readTextFile();
 				break;
 			case 4:
 				defaultTwoRunners();
@@ -45,6 +46,12 @@ public class Marathon implements CallBackFromThread {
 		System.out.println("Good Bye!");
 		return;
 
+	}
+
+
+	private void readTextFile() {
+		// TODO Auto-generated method stub
+		String fileName = Validator.validFile();		
 	}
 
 
