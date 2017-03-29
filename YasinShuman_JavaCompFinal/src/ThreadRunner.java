@@ -91,7 +91,7 @@ public class ThreadRunner implements Runnable{
 	}
 
 	public void delegate(CallBackFromThread callBackFromThread) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub xyz
 		this.callBackFromThread = callBackFromThread;
 		
 	}
