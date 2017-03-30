@@ -15,7 +15,6 @@ public class ThreadRunner implements Runnable{
 		this.restPercentage = restPercentage;
 		this.runnersSpeed = runnersSpeed;
 		random = new Random(System.currentTimeMillis());
-		System.out.println("thread object created " + this.getName()); 
 	}
 
 	public int getRunnersSpeed() {

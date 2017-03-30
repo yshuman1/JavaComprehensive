@@ -7,23 +7,28 @@ import java.util.Scanner;
 public class Marathon implements CallBackFromThread {
 
 	private static final int exitCondition = 5;
-	ArrayList<Thread> listRunners = new ArrayList<Thread>();
-	ArrayList<String> listNames = new ArrayList<String>();
-	CallBackFromThread callBackFromThread = this;
-
+	private ArrayList<Thread> listRunners = new ArrayList<Thread>();
+	private ArrayList<String> listNames = new ArrayList<String>();
+	private CallBackFromThread callBackFromThread = this;
+	private Scanner sc = new Scanner(System.in);
+	private boolean raceOver = false;
+	private boolean raceStarted = false;
+	private int choice;
+	private String menu = "Welcome to the Marathon Race Runner Program\n\n1.  "
+			+ "Derby database\n2.  "
+			+ "XML file\n3.  "
+			+ "Text file\n4.  "
+			+ "Default two runners\n5.  "
+			+ "Exit\n\n"
+			+ "Enter your choice: ";
+	
 	public Marathon() {
-		Scanner sc = new Scanner(System.in);
-		String menu = "Welcome to the Marathon Race Runner Program\n\n1.  "
-				+ "Derby database\n2.  "
-				+ "XML file\n3.  "
-				+ "Text file\n4.  "
-				+ "Default two runners\n5.  "
-				+ "Exit\n\n"
-				+ "Enter your choice: ";
+		
+		
 		//String xmlPrompt = "Enter XML file name: ";
 		//String textPrompt = "Enter text file name: ";
 
-		int choice = Validator.validChoice(sc, menu);
+		choice = Validator.validChoice(sc, menu);
 		while (choice < 5){
 			switch(choice){
 			case 1:
@@ -32,15 +37,22 @@ public class Marathon implements CallBackFromThread {
 				break;
 			case 3:
 				readTextFile();
+				raceStarted= true;
 				break;
 			case 4:
 				defaultTwoRunners();
+				raceStarted = true;
 				break;
 			default:
+				choice = Validator.validChoice(sc, menu);
 				break;
 
 			}
-			choice = Validator.validChoice(sc, menu);
+//			while (raceStarted) {
+//				if (raceOver) 
+//					choice = Validator.validChoice(sc, menu);
+//			}
+			
 
 		}
 		System.out.println("Good Bye!");
@@ -51,7 +63,10 @@ public class Marathon implements CallBackFromThread {
 
 	private void readTextFile() {
 		// TODO Auto-generated method stub
-		String fileName = Validator.validFile();		
+		Validator.validFile(sc, listNames, listRunners, callBackFromThread);
+		for (Thread runner : listRunners) {
+			runner.start();
+		}
 	}
 
 
@@ -77,14 +92,18 @@ public class Marathon implements CallBackFromThread {
 	@Override
 	public void finished(String name) {
 		// TODO Auto-generated method stub
-		listRunners.get(0).interrupt();
-		listRunners.get(1).interrupt();
+		for (Thread runner : listRunners) {
+			runner.interrupt();
+		}
 		System.out.println("The race is over! The " + name + " is the winner.");
 		for (String loser : listNames) {
 			if (!loser.equals(name)) {
 				System.out.println(loser + " : You beat me fair and square.");
 			}
 		}
+		raceOver = true;
+		raceStarted = false;
+		choice = Validator.validChoice(sc, menu);
 	}
 }
 
