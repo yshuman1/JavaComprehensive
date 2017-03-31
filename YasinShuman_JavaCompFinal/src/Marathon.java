@@ -34,6 +34,7 @@ public class Marathon implements CallBackFromThread {
 			case 1:
 				break;
 			case 2:
+				readXmlFile();
 				break;
 			case 3:
 				readTextFile();
@@ -48,16 +49,26 @@ public class Marathon implements CallBackFromThread {
 				break;
 
 			}
-//			while (raceStarted) {
-//				if (raceOver) 
-//					choice = Validator.validChoice(sc, menu);
-//			}
+			while (raceStarted) {
+				if (raceOver) 
+					choice = Validator.validChoice(sc, menu);
+			}
 			
 
 		}
 		System.out.println("Good Bye!");
 		return;
 
+	}
+
+
+	private void readXmlFile() {
+		// TODO Auto-generated method stub
+		Validator.validXmlFile(sc, listNames, listRunners, callBackFromThread);
+		for (Thread runner : listRunners) {
+			runner.start();
+		}
+		
 	}
 
 
@@ -103,7 +114,7 @@ public class Marathon implements CallBackFromThread {
 		}
 		raceOver = true;
 		raceStarted = false;
-		choice = Validator.validChoice(sc, menu);
+		
 	}
 }
 

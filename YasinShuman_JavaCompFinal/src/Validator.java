@@ -7,21 +7,26 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+
 public class Validator {
 	public static int validChoice(Scanner sc, String menu) {
 		while (true) {
-	  		  System.out.print(menu);
-	  		  if (sc.hasNextInt()) {
-	  			  int choice = sc.nextInt();
-	  			  sc.nextLine();
-	  			  if (choice >= 1 && choice <= 5) {
-	  				  return choice;
-	  			  }
-	    	  }   
-	  		  System.out.println("\nError! Invalid value. Try again.");
-	  		  sc.nextLine();
-  	  	}
-    }
+			System.out.print(menu);
+			if (sc.hasNextInt()) {
+				int choice = sc.nextInt();
+				sc.nextLine();
+				if (choice >= 1 && choice <= 5) {
+					return choice;
+				}
+			}   
+			System.out.println("\nError! Invalid value. Try again.");
+			sc.nextLine();
+		}
+	}
 
 	public static void validFile(Scanner sc, ArrayList<String> listNames, 
 			ArrayList<Thread> listRunners, CallBackFromThread callBackFromThread) {
@@ -35,12 +40,12 @@ public class Validator {
 				while ((line = inText.readLine()) != null) {
 					boolean valid = createLists(listNames, listRunners, line, callBackFromThread);
 				}
-			inText.close();
+				inText.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			} 
 		}
-		
+
 	}
 
 	private static boolean createLists(ArrayList<String> listNames, ArrayList<Thread> listRunners, String line, CallBackFromThread callBackFromThread) {
@@ -59,7 +64,75 @@ public class Validator {
 		return true;
 	}
 
-	
+	public static void validXmlFile(Scanner sc, ArrayList<String> listNames, ArrayList<Thread> listRunners,
+			CallBackFromThread callBackFromThread) {
+		// TODO Auto-generated method stub
+		System.out.print("Enter XML file name: ");
+		if (sc.hasNextLine()) {
+			String fileName = sc.nextLine();
+			File XmlFile = new File(fileName);
+			//read from a xml file
+			XMLInputFactory inputFactory =
+					XMLInputFactory.newFactory();
+			try
+			{
+				// create an XMLStreamReader object
+				FileReader fileReader =
+						new FileReader(XmlFile);
+				XMLStreamReader reader =
+						inputFactory.createXMLStreamReader(fileReader);
+				// Read XML here
+				String name = null;
+				int runnersSpeed = 0;
+				int restPercentage = 0;
+				while (reader.hasNext()) {
+					int eventType = reader.getEventType();
+					switch (eventType)
+					{
+					case XMLStreamConstants.START_ELEMENT:
+						String elementName = reader.getLocalName();
+		                  if (elementName.equals("Runner")) {
+		                	name = reader.getAttributeValue(0);
+							System.out.println("XML complete");
+		                  }
+		                  if (elementName.equals("RunnersMoveIncrement")) {
+		                	  String increment = reader.getElementText();
+		                	  runnersSpeed = Integer.valueOf(increment);
+		                  }
+		                  if (elementName.equals("RestPercentage")) {
+		                	  String percent = reader.getElementText();
+		                	  restPercentage = Integer.valueOf(percent);
+		                  }
+		                break;
+					case XMLStreamConstants.END_ELEMENT:
+						elementName = reader.getLocalName();
+						if (elementName.equals("Runner")) {
+							listNames.add(name);
+							ThreadRunner runner = new ThreadRunner(
+									name,
+									runnersSpeed,
+									restPercentage);
+							runner.delegate(callBackFromThread);
+							Thread runnerThread = new Thread(runner);
+							listRunners.add(runnerThread);
+						}
+						break;
+					default:
+						break; }
+					reader.next();
+					
+				}
+			}
+			catch (IOException | XMLStreamException e)
+			{
+				System.out.println(e);
+			}
+			System.out.println("end");
+		}
+
+	}
+
+
 }
 
 
