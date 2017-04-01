@@ -1,5 +1,0 @@
-
-public class Validator {
-	System.out.println("Welcome to the MArathon Race Runner Program");
-	
-}

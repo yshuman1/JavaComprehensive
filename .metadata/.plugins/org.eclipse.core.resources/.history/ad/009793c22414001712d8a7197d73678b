@@ -1,0 +1,95 @@
+import java.util.Random;
+
+public class ThreadRunner implements Runnable{
+	private String name = "";
+	private int restPercentage;
+	private int runnersSpeed;
+	private int distance;
+	private Random random;
+	private static final int GOAL = 1000;
+	private CallBackFromThread callBackFromThread;
+	
+	ThreadRunner(String name, int runnersSpeed, int restPercentage){
+		this.setName(name);
+		this.restPercentage = restPercentage;
+		this.runnersSpeed = runnersSpeed;
+		random = new Random(System.currentTimeMillis());
+		System.out.println("thread object created " + this.getName()); 
+	}
+
+	public int getRunnersSpeed() {
+		return runnersSpeed;
+	}
+
+	public void setRunnersSpeed(int runnersSpeed) {
+		this.runnersSpeed = runnersSpeed;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+
+	public int getRestPercentage() {
+		return restPercentage;
+	}
+
+	public void setRestPercentage(int restPercentage) {
+		this.restPercentage = restPercentage;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public void run() {
+		while (distance < GOAL) {
+			int restPeriod = random.nextInt(100);
+			if (restPeriod > restPercentage){
+				race();
+			} else {
+				rest();
+			}
+			sleep();
+		}
+		System.out.println(name + " : I finished!");
+		callBackFromThread.finished(name);
+	}
+
+	private void sleep() {
+		// TODO Auto-generated method stub
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	private void rest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void race() {
+		// TODO Auto-generated method stub
+		distance += runnersSpeed;
+		System.out.println(name + " : " + distance );
+	}
+
+	public void delegate(CallBackFromThread callBackFromThread) {
+		// TODO Auto-generated method stub
+		this.callBackFromThread = callBackFromThread;
+		
+	}
+}
+
