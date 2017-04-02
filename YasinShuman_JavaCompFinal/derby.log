@@ -1,52 +1,19 @@
-Sat Apr 01 19:09:26 PDT 2017 Thread[main,5,main] Cleanup action starting
-java.sql.SQLException: Database 'FinalDB' not found.
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
-	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
-	at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
-	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:247)
-	at DerbyReader.getConnection(DerbyReader.java:60)
-	at DerbyReader.readDataFromDb(DerbyReader.java:29)
-	at DerbyReader.<init>(DerbyReader.java:22)
-	at Marathon.readFromDb(Marathon.java:68)
-	at Marathon.<init>(Marathon.java:35)
-	at MarathonRaceApp.main(MarathonRaceApp.java:7)
-Caused by: java.sql.SQLException: Database 'FinalDB' not found.
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
-	... 20 more
-============= begin nested exception, level (1) ===========
-java.sql.SQLException: Database 'FinalDB' not found.
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
-	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
-	at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
-	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:247)
-	at DerbyReader.getConnection(DerbyReader.java:60)
-	at DerbyReader.readDataFromDb(DerbyReader.java:29)
-	at DerbyReader.<init>(DerbyReader.java:22)
-	at Marathon.readFromDb(Marathon.java:68)
-	at Marathon.<init>(Marathon.java:35)
-	at MarathonRaceApp.main(MarathonRaceApp.java:7)
-============= end nested exception, level (1) ===========
-Cleanup action completed
+----------------------------------------------------------------
+Sun Apr 02 16:04:41 PDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015b-30e9-d112-00000000002e 
+on database directory /Users/yasin/Documents/workspace/YasinShuman_JavaCompFinal/FinalDB with class loader sun.misc.Launcher$AppClassLoader@2a139a55 
+Loaded from file:/Users/yasin/Documents/workspace/YasinShuman_JavaCompFinal/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_92-b14
+user.dir=/Users/yasin/Documents/workspace/YasinShuman_JavaCompFinal
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.12.4
+derby.system.home=.
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Apr 02 16:04:42 PDT 2017: Shutting down Derby engine
+----------------------------------------------------------------
+Sun Apr 02 16:04:42 PDT 2017:
+Shutting down instance a816c00e-015b-30e9-d112-00000000002e on database directory /Users/yasin/Documents/workspace/YasinShuman_JavaCompFinal/FinalDB with class loader sun.misc.Launcher$AppClassLoader@2a139a55 
+----------------------------------------------------------------

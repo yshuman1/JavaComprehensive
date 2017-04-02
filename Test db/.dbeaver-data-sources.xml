@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<data-sources>
-	<data-source id="derby-15a9685aabd-59ca1f2d48084f7c" provider="generic" driver="derby" name="Derby - MurachDB" save-password="true" show-system-objects="true" read-only="false">
-		<connection server="" database="/Users/yasin/Downloads/db-derby-for-java-comp/bin/db/MurachDB" url="jdbc:derby:/Users/yasin/Downloads/db-derby-for-java-comp/bin/db/MurachDB" type="dev"/>
-	</data-source>
-</data-sources>
