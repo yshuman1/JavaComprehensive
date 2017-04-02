@@ -14,50 +14,58 @@ public class Marathon implements CallBackFromThread {
 	private boolean raceOver = false;
 	private boolean raceStarted = false;
 	private int choice;
-	private String menu = "Welcome to the Marathon Race Runner Program\n\n1.  "
+	private String menu = "\n\nWelcome to the Marathon Race Runner Program\n\n1.  "
 			+ "Derby database\n2.  "
 			+ "XML file\n3.  "
 			+ "Text file\n4.  "
 			+ "Default two runners\n5.  "
 			+ "Exit\n\n"
 			+ "Enter your choice: ";
-	
+	private Thread mainThread;
+
 	public Marathon() {
-		
-		
-		//String xmlPrompt = "Enter XML file name: ";
-		//String textPrompt = "Enter text file name: ";
-
+		mainThread = Thread.currentThread();
 		choice = Validator.validChoice(sc, menu);
-		while (choice < 5){
-			switch(choice){
-			case 1:
-				break;
-			case 2:
-				readXmlFile();
-				break;
-			case 3:
-				readTextFile();
-				raceStarted= true;
-				break;
-			case 4:
-				defaultTwoRunners();
-				raceStarted = true;
-				break;
-			default:
-				choice = Validator.validChoice(sc, menu);
-				break;
-
-			}
-			while (raceStarted) {
-				if (raceOver) 
+		while (choice != 5) {
+			//choice = Validator.validChoice(sc, menu);
+			if (choice < 5){
+				switch(choice){
+				case 1:
+					readFromDb();
+					break;
+				case 2:
+					readXmlFile();
+					break;
+				case 3:
+					readTextFile();
+					raceStarted= true;
+					break;
+				case 4:
+					defaultTwoRunners();
+					raceStarted = true;
+					break;
+				default:
 					choice = Validator.validChoice(sc, menu);
-			}
-			
+					break;
+				}
+				try {
+					Thread.sleep(Long.MAX_VALUE);
+				} catch (InterruptedException e) {
 
+					choice = Validator.validChoice(sc, menu);
+				}
+			}
 		}
 		System.out.println("Good Bye!");
 		return;
+	}
+
+	private void readFromDb() {
+		// TODO Auto-generated method stub
+		DerbyReader derbyReader = new DerbyReader(listNames, listRunners, callBackFromThread);
+		for (Thread runner : listRunners) {
+			runner.start();
+		}
 
 	}
 
@@ -68,7 +76,7 @@ public class Marathon implements CallBackFromThread {
 		for (Thread runner : listRunners) {
 			runner.start();
 		}
-		
+
 	}
 
 
@@ -113,8 +121,10 @@ public class Marathon implements CallBackFromThread {
 			}
 		}
 		raceOver = true;
+		mainThread.interrupt();
+
 		raceStarted = false;
-		
+
 	}
 }
 

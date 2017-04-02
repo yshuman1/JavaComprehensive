@@ -1,26 +1,19 @@
 ----------------------------------------------------------------
-Fri Mar 31 11:58:36 PDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-015b-25bb-cd12-000006fe9a28 
-on database directory /Users/yasin/Documents/workspace/db-derby-for-java-comp/bin/MurachDB with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
-Loaded from file:/Users/yasin/Documents/workspace/db-derby-for-java-comp/lib/derby.jar
+Sat Apr 01 20:03:31 PDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015b-2c9e-1c38-fffff6c677c0 
+on database directory /Users/yasin/Documents/workspace/db-derby-for-java-comp/bin/FinalDB with class loader sun.misc.Launcher$AppClassLoader@2a139a55 
+Loaded from file:/Users/yasin/Documents/workspace/YasinShuman_JavaCompFinal/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_92-b14
-user.dir=/Users/yasin/Documents/workspace/db-derby-for-java-comp/bin
+user.dir=/Users/yasin/Documents/workspace/YasinShuman_JavaCompFinal
 os.name=Mac OS X
 os.arch=x86_64
 os.version=10.12.4
-derby.system.home=null
+derby.system.home=/Users/yasin/Documents/workspace/db-derby-for-java-comp/bin/
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Fri Mar 31 11:59:16 PDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 601a400f-015b-25bb-cd12-000006fe9a28 
-on database directory /Users/yasin/Documents/workspace/db-derby-for-java-comp/bin/db/MurachDB with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
-Loaded from file:/Users/yasin/Documents/workspace/db-derby-for-java-comp/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_92-b14
-user.dir=/Users/yasin/Documents/workspace/db-derby-for-java-comp/bin
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.12.4
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
+Sat Apr 01 20:03:32 PDT 2017: Shutting down Derby engine
+----------------------------------------------------------------
+Sat Apr 01 20:03:32 PDT 2017:
+Shutting down instance a816c00e-015b-2c9e-1c38-fffff6c677c0 on database directory /Users/yasin/Documents/workspace/db-derby-for-java-comp/bin/FinalDB with class loader sun.misc.Launcher$AppClassLoader@2a139a55 
+----------------------------------------------------------------
