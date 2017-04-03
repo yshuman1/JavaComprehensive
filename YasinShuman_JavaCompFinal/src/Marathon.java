@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+//marathon class is the heart of this app. displays menu prompts user for choices for configuration of the race and then loops back to begin again or exits
 
 
 public class Marathon implements CallBackFromThread {
@@ -23,11 +23,13 @@ public class Marathon implements CallBackFromThread {
 			+ "Enter your choice: ";
 	private Thread mainThread;
 
+	/**
+	 * main constructor of class
+	 */
 	public Marathon() {
 		mainThread = Thread.currentThread();
 		choice = Validator.validChoice(sc, menu);
 		while (choice != 5) {
-			//choice = Validator.validChoice(sc, menu);
 			if (choice < 5){
 				switch(choice){
 				case 1:
@@ -51,17 +53,28 @@ public class Marathon implements CallBackFromThread {
 				try {
 					Thread.sleep(Long.MAX_VALUE);
 				} catch (InterruptedException e) {
-
-					choice = Validator.validChoice(sc, menu);
+					pressAnyKeyToContinue();
 				}
 			}
+
 		}
-		System.out.println("Good Bye!");
+		System.out.println("\nThank you for using my Marathon Race Program");
 		return;
 	}
 
+	private void pressAnyKeyToContinue() {
+		System.out.println("Press enter to continue . . . ");
+		try
+		{
+			System.in.read();
+		}  
+		catch(Exception e)
+		{}  
+
+	}
+
 	private void readFromDb() {
-		// TODO Auto-generated method stub
+		@SuppressWarnings("unused")
 		DerbyReader derbyReader = new DerbyReader(listNames, listRunners, callBackFromThread);
 		for (Thread runner : listRunners) {
 			runner.start();
@@ -71,7 +84,6 @@ public class Marathon implements CallBackFromThread {
 
 
 	private void readXmlFile() {
-		// TODO Auto-generated method stub
 		Validator.validXmlFile(sc, listNames, listRunners, callBackFromThread);
 		for (Thread runner : listRunners) {
 			runner.start();
@@ -81,7 +93,6 @@ public class Marathon implements CallBackFromThread {
 
 
 	private void readTextFile() {
-		// TODO Auto-generated method stub
 		Validator.validFile(sc, listNames, listRunners, callBackFromThread);
 		for (Thread runner : listRunners) {
 			runner.start();
@@ -90,7 +101,7 @@ public class Marathon implements CallBackFromThread {
 
 
 	private void defaultTwoRunners() {
-		// TODO Auto-generated method stub
+
 		listNames = new ArrayList<String>();
 		listRunners = new ArrayList<Thread>();
 		listNames.add("Tortoise");
@@ -110,7 +121,6 @@ public class Marathon implements CallBackFromThread {
 
 	@Override
 	public void finished(String name) {
-		// TODO Auto-generated method stub
 		for (Thread runner : listRunners) {
 			runner.interrupt();
 		}
@@ -122,9 +132,7 @@ public class Marathon implements CallBackFromThread {
 		}
 		raceOver = true;
 		mainThread.interrupt();
-
 		raceStarted = false;
-
 	}
 }
 

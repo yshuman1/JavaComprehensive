@@ -1,19 +1,23 @@
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import org.apache.derby.iapi.sql.PreparedStatement;
-import org.apache.derby.iapi.sql.ResultSet;
-
+/**
+ * @author yasin
+ *calss used to read from derby db
+ */
 public class DerbyReader {
 	private	ArrayList<String> listNames;
 	private ArrayList<Thread> listRunners;
 	private CallBackFromThread callBackFromThread;
 
+	/**
+	 * @param listNames
+	 * @param listRunners
+	 * @param callBackFromThread
+	 * main constructor
+	 */
 	public DerbyReader(ArrayList<String> listNames, ArrayList<Thread> listRunners,
 			CallBackFromThread callBackFromThread) {
 		// TODO Auto-generated constructor stub

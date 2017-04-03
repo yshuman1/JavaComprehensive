@@ -62,35 +62,29 @@ public class ThreadRunner implements Runnable{
 			sleep();
 		}
 		raceOver = true;
-		System.out.println(name + " : I finished!");
+		System.out.println(name + " : I finished!\n");
 		callBackFromThread.finished(name);
 	}
 
 	private void sleep() {
-		// TODO Auto-generated method stub
 		try {
 			Thread.sleep(10);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			raceOver = true;
-			//e.printStackTrace();
 		}
 		
 	}
 
 	private void rest() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	private void race() {
-		// TODO Auto-generated method stub
 		distance += runnersSpeed;
 		System.out.println(name + " : " + distance );
 	}
 
 	public void delegate(CallBackFromThread callBackFromThread) {
-		// TODO Auto-generated method stub xyz
 		this.callBackFromThread = callBackFromThread;
 		
 	}
