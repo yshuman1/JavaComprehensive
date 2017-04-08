@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="javax.xml.stream.XMLStreamWriter"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="Validator"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
@@ -28,4 +27,15 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Marathon"/>
 <fullyQualifiedTypeName name="CallBackFromThread"/>
+<fullyQualifiedTypeName name="javax.xml.stream.XMLInputFactory"/>
+<fullyQualifiedTypeName name="javax.xml.stream.XMLStreamReader"/>
+<fullyQualifiedTypeName name="javax.xml.stream.XMLStreamException"/>
+<fullyQualifiedTypeName name="javax.xml.stream.XMLStreamConstants"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="DerbyReader"/>
+<fullyQualifiedTypeName name="org.apache.derby.iapi.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="org.apache.derby.iapi.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
 </qualifiedTypeNameHistroy>

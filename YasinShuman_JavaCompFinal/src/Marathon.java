@@ -67,6 +67,8 @@ public class Marathon implements CallBackFromThread {
 		try
 		{
 			System.in.read();
+			choice = Validator.validChoice(sc, menu);
+			
 		}  
 		catch(Exception e)
 		{}  
